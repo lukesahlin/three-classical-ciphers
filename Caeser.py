@@ -14,7 +14,7 @@ def CaeserEncryption(message, key):
         else:
             print("Invalid character!")
             break
-    return result
+    print (result)
 
 def CaeserDecryption(message, key):
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
@@ -32,7 +32,8 @@ def CaeserDecryption(message, key):
         else:
             print("Invalid character!")
             break
-    return result
+    print (result)
+
 
 
 
