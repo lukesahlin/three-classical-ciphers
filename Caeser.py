@@ -32,7 +32,7 @@ def CaeserDecryption(message, key):
         else:
             print("Invalid character!")
             break
-    return result
+    return result 
 
 
 
