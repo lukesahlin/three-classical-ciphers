@@ -10,5 +10,5 @@ def VigenereCipherEncrypt(message, keyword):
     if len(keyword) < len(message):
         # make keyword into key
         for i in len(message):
-            keyword
+            keyword 
         for char in message:
