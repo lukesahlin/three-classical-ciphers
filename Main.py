@@ -8,9 +8,11 @@ def option_ceasar_cipher():
     if action == 'e':
         print("Encrypting message in Ceasar Cipher")
         # logic here for ceasar encryption
+        return # exit the function after success (may not be needed after integrating functions)
     if action == 'd':
         print("Decrypting message in Ceasar Cipher")
         # logic here for ceasar decryption
+        return # exit the function after success (may not be needed after integrating functions)
     else:
         print("Not a valid selection, please choose 'e' for encrypt and 'd' for decrypt.")
         option_ceasar_cipher() # recursively call function to go back again
@@ -26,9 +28,11 @@ def option_vigenere_cipher():
     if action == 'e':
         print("Encrypting message in Vigenere Cipher")
         # logic here for vigenere encryption
+        return # exit the function after success (may not be needed after integrating functions)
     if action == 'd':
         print("Decrypting message in Vigenere Cipher")
         # logic here for vigenere decryption
+        return # exit the function after success (may not be needed after integrating functions)
     else:
         print("Not a valid selection, please choose 'e' for encrypt and 'd' for decrypt")
         option_vigenere_cipher() # recursively call function to go back again
@@ -49,9 +53,11 @@ def option_otp_cipher():
     if action == 'e':
         print("Encrypting message in OTP Cipher")
         # logic here for otp encryption
+        return # exit the function after success (may not be needed after integrating functions)
     if action == 'd':
         print("Decrypting message in OTP Cipher")
         # logic here for otp decryption
+        return # exit the function after success (may not be needed after integrating functions)
     else:
         print("Not a valid selection, please choose 'e' for encrypt and 'd' for decrypt")
         option_otp_cipher() # recursively call function to go back again
