@@ -1,3 +1,5 @@
+from OTP import *
+
 def option_ceasar_cipher():
     # running ceasar cipher
     print("Running ceasar cipher")
@@ -51,11 +53,13 @@ def option_otp_cipher():
         return
 
     if action == 'e':
+        hiddenMessage = EncryptOneTimePad(message, key)
         print("Encrypting message in OTP Cipher")
-        # logic here for otp encryption
-        return # exit the function after success (may not be needed after integrating functions)
+        print("your secret message is " + hiddenMessage)
     if action == 'd':
+        secret =DecryptOneTimePad(message, key)
         print("Decrypting message in OTP Cipher")
+        print("your secret is " + secret)
         # logic here for otp decryption
         return # exit the function after success (may not be needed after integrating functions)
     else:
