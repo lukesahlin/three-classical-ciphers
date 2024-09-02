@@ -1,3 +1,5 @@
+from Caeser import *
+
 def option_ceasar_cipher():
     # running ceasar cipher
     print("Running ceasar cipher")
@@ -7,10 +9,12 @@ def option_ceasar_cipher():
 
     if action == 'e':
         print("Encrypting message in Ceasar Cipher")
-        # logic here for ceasar encryption
+        CaeserEncryption(message.upper(), key.upper())
+        return
     if action == 'd':
         print("Decrypting message in Ceasar Cipher")
-        # logic here for ceasar decryption
+        CaeserDecryption(message.upper(), key.upper())
+        return
     else:
         print("Not a valid selection, please choose 'e' for encrypt and 'd' for decrypt.")
         option_ceasar_cipher() # recursively call function to go back again
