@@ -58,6 +58,7 @@ def option_otp_cipher():
 
 
 def main():
+    # test
     print("Choose an option of what cipher to use:")
     print("1. Choose Ceaser Cipher")
     print("2. Choose Vigenere Cipher")
