@@ -66,6 +66,7 @@ def main():
 
     choice = input("Enter the number of your choice: ")
 
+
     if choice == '1':
         option_ceasar_cipher()
     elif choice == '2':
