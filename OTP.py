@@ -1,16 +1,21 @@
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+
 def EncryptOneTimePad(secret, key):
     secret = secret.upper()
     key = key.upper()
 
     if len(secret) != len(key):
         raise ValueError("secret and key are not the same length")
-    
+
     encryptedSecret = ""
     for i in range(len(key)):
-        cipher_val = (ord(secret[i]) - ord('A') + ord(key[i]) - ord('A')) % 26
-        encryptedSecret += chr(cipher_val + ord('A'))
+        secretIndex = alphabet.index(secret[i])
+        keyIndex = alphabet.index(key[i])
+        cipherVal = (secretIndex + keyIndex) % 27
+        encryptedSecret += alphabet[cipherVal]
 
     return encryptedSecret
+
 def DecryptOneTimePad(encryptedSecret, key):
     encryptedSecret = encryptedSecret.upper()
     key = key.upper()
@@ -20,15 +25,18 @@ def DecryptOneTimePad(encryptedSecret, key):
 
     secret = ""
     for i in range(len(key)):
-        cipher_val = (ord(encryptedSecret[i]) - ord('A') - (ord(key[i]) - ord('A'))) % 26
-        secret += chr(cipher_val + ord('A'))
+        encryptedIndex = alphabet.index(encryptedSecret[i])
+        keyIndex = alphabet.index(key[i])
+        cipherVal = (encryptedIndex - keyIndex) % 27
+        secret += alphabet[cipherVal]
 
     return secret
 
 
+
 #test
-plainText = "Hello "
-key = "MONEYs"
+plainText = "Hello friend"
+key = "MONEYsasdfaa"
 encryptedText = EncryptOneTimePad(plainText, key)
 print("Cipher Text - " + encryptedText)
 print("Message - " + DecryptOneTimePad(encryptedText, key))
