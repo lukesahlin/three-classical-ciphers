@@ -27,8 +27,8 @@ def DecryptOneTimePad(encryptedSecret, key):
 
 
 #test
-plainText = "Hello"
-key = "MONEY"
+plainText = "Hello "
+key = "MONEYs"
 encryptedText = EncryptOneTimePad(plainText, key)
 print("Cipher Text - " + encryptedText)
 print("Message - " + DecryptOneTimePad(encryptedText, key))
