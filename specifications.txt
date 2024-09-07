@@ -3,7 +3,6 @@ one_time_pad.py
     encrypt_one_time_pad(secret, key)
         Purpose
             The function encrypts a plaintext message using the One-Time Pad cipher, which provides perfect secrecy when the key is truly random and used only once.
-
         Assumptions
             The key is a string that is exactly the same length as the secret.
             Both secret and key contain only characters from the defined ALPHABET.
@@ -106,4 +105,36 @@ Main.py
             Valid Choice: The user is taken to the appropriate cipher function.
             Invalid Choice: If the choice is not 1, 2, or 3, it prompts the user again via a recursive call.
 caeser.py
-    
+    caesar_encryption(message, key)
+        Purpose
+            The function encrypts a plaintext message using the Caesar cipher, which shifts all the letters and spaces in message by the value of key (selected value)
+        Assumptions
+            The message provided contains only letters and spaces, no special characters
+            The key chosen is either a letter (character) or the space character 
+        Inputs
+            The plaintext message that the user wants to be encrypted
+            The key (character) the user wants to use in order to encrypt their message
+        Outputs
+            A "casesar text" message is returned to the user 
+        State Changes
+            No state changes
+        Cases and Expected Behavior
+            Valid Choice: User enters a message with only letters and spaces and a single character to be the key
+            Invalid Choice: User enters special characters (!@#$%^&*) in their message and chooses a sentence to be the key
+    caesar_decryption(message, key)
+        Purpose
+            The function decrypts a "caesar text" message using the Caesar cipher, which shifts all the letters and spaces in the by the value of key (selected value)
+        Assumptions
+            The message provided contains only letters and spaces, no special characters
+            The key chosen is the same key that was used in to encrypt the message
+        Inputs
+            The "caser text" message that the user wants to be decrypt
+            The key (character) needed in order to correctly decrypt the message
+        Outputs
+            A plantext message is return to the user
+        State Changes
+            No state changes
+        Cases and Expected Behavior
+            Valid Choice: User enters a message with only letters and spaces and the correct decryption key
+            Invalid Choice: User enters special characters (!@#$%^&*) in their message, chooses a sentence to be the key, or picks the wrong key
+            
