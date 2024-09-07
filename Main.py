@@ -1,7 +1,7 @@
 
 from caesar import *
-from one_time_pad import *
-
+from one_time_pad import decrypt_one_time_pad, encrypt_one_time_pad
+from vigenere import vigenere_cipher
 
 def option_ceasar_cipher():
     # running ceasar cipher
@@ -26,18 +26,20 @@ def option_ceasar_cipher():
 def option_vigenere_cipher():
     # running the vigenere cipher
     print("Running vigenere cipher")
-    message = input("Enter the message to encrypt/decrypt: ")
+    message = input("Enter the message to encrypt/decrypt: ").upper()
     action = input("Do you want to (e)ncrypt or (d)ecrypt: ").lower()
-    key = input("Enter the key for encryption/decryption (a word): ")
+    key = input("Enter the key for encryption/decryption (a word): ").upper()
 
     if action == 'e':
+        hiddenMessage = vigenere_cipher(message, key, True)
         print("Encrypting message in Vigenere Cipher")
-        # logic here for vigenere encryption
-        return # exit the function after success (may not be needed after integrating functions)
+        print("your secret message is " + hiddenMessage)
+        return
     if action == 'd':
+        secret = vigenere_cipher(message, key, False)
         print("Decrypting message in Vigenere Cipher")
-        # logic here for vigenere decryption
-        return # exit the function after success (may not be needed after integrating functions)
+        print("your secret is " + secret)
+        return
     else:
         print("Not a valid selection, please choose 'e' for encrypt and 'd' for decrypt")
         option_vigenere_cipher() # recursively call function to go back again
