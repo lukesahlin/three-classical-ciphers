@@ -1,5 +1,5 @@
 from Caeser import *
-from OTP import *
+from one_time_pad import *
 
 
 def option_ceasar_cipher():

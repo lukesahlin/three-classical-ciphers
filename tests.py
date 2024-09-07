@@ -1,5 +1,5 @@
 import pytest
-from OTP import decrypt_one_time_pad, encrypt_one_time_pad
+from one_time_pad import decrypt_one_time_pad, encrypt_one_time_pad
 
 """Tests for One-Time Pad encryption and decryption."""
 
