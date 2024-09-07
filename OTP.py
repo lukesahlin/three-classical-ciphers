@@ -1,43 +1,35 @@
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
-def EncryptOneTimePad(secret, key):
+
+def encrypt_one_time_pad(secret, key):
     secret = secret.upper()
     key = key.upper()
 
     if len(secret) != len(key):
         raise ValueError("secret and key are not the same length")
 
-    encryptedSecret = ""
+    encrypted_secret = ""
     for i in range(len(key)):
-        secretIndex = alphabet.index(secret[i])
-        keyIndex = alphabet.index(key[i])
-        cipherVal = (secretIndex + keyIndex) % 27
-        encryptedSecret += alphabet[cipherVal]
+        secret_index = alphabet.index(secret[i])
+        key_index = alphabet.index(key[i])
+        cipher_val = (secret_index + key_index) % 27
+        encrypted_secret += alphabet[cipher_val]
 
-    return encryptedSecret
+    return encrypted_secret
 
-def DecryptOneTimePad(encryptedSecret, key):
-    encryptedSecret = encryptedSecret.upper()
+
+def decrypt_one_time_pad(encrypted_secret, key):
+    encrypted_secret = encrypted_secret.upper()
     key = key.upper()
 
-    if len(encryptedSecret) != len(key):
+    if len(encrypted_secret) != len(key):
         raise ValueError("secret and key are not the same length")
 
     secret = ""
     for i in range(len(key)):
-        encryptedIndex = alphabet.index(encryptedSecret[i])
-        keyIndex = alphabet.index(key[i])
-        cipherVal = (encryptedIndex - keyIndex) % 27
-        secret += alphabet[cipherVal]
+        encrypted_index = alphabet.index(encrypted_secret[i])
+        key_index = alphabet.index(key[i])
+        cipher_val = (encrypted_index - key_index) % 27
+        secret += alphabet[cipher_val]
 
     return secret
-
-
-
-#test
-plainText = "Hello friend"
-key = "MONEYsasdfaa"
-encryptedText = EncryptOneTimePad(plainText, key)
-print("Cipher Text - " + encryptedText)
-print("Message - " + DecryptOneTimePad(encryptedText, key))
-

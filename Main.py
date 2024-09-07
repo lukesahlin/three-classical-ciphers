@@ -53,15 +53,15 @@ def option_otp_cipher():
         return
 
     if action == 'e':
-        hiddenMessage = EncryptOneTimePad(message, key)
+        hiddenMessage = encrypt_one_time_pad(message, key)
         print("Encrypting message in OTP Cipher")
         print("your secret message is " + hiddenMessage)
         return
     if action == 'd':
-        secret = DecryptOneTimePad(message, key)
+        secret = decrypt_one_time_pad(message, key)
         print("Decrypting message in OTP Cipher")
         print("your secret is " + secret)
-        return 
+        return
     else:
         print("Not a valid selection, please choose 'e' for encrypt and 'd' for decrypt")
         option_otp_cipher() # recursively call function to go back again
