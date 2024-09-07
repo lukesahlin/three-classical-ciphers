@@ -3,7 +3,7 @@ import pytest
 from OTP import decrypt_one_time_pad, encrypt_one_time_pad
 
 
-#TESTS FOR OTP
+""" tests for one-time pad pro"""
 @pytest.mark.parametrize(
     "plain_text, key, expected_encrypted",
     [
@@ -12,7 +12,7 @@ from OTP import decrypt_one_time_pad, encrypt_one_time_pad
     ]
 )
 def test_encrypt_otp(plain_text, key, expected_encrypted):
-   #testing encryption for one-time-pad
+    #testing encryption for one-time-pad
     encrypted = encrypt_one_time_pad(plain_text, key)
     assert encrypted == expected_encrypted
 

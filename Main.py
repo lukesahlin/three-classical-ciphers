@@ -1,5 +1,7 @@
 from Caeser import *
 from OTP import *
+
+
 def option_ceasar_cipher():
     # running ceasar cipher
     print("Running ceasar cipher")
@@ -9,11 +11,11 @@ def option_ceasar_cipher():
 
     if action == 'e':
         print("Encrypting message in Ceasar Cipher")
-        CaeserEncryption(message.upper(), key.upper())
+        caesar_encryption(message.upper(), key.upper())
         return
     if action == 'd':
         print("Decrypting message in Ceasar Cipher")
-        CaeserDecryption(message.upper(), key.upper())
+        caesar_decryption(message.upper(), key.upper())
         return
     else:
         print("Not a valid selection, please choose 'e' for encrypt and 'd' for decrypt.")

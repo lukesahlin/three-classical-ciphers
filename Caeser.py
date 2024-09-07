@@ -1,39 +1,50 @@
-def CaeserEncryption(message, key):
+def caesar_encryption(message, key):
+    """Encrypts a message using Caesar cipher with the given key.
+
+    Args:
+        message (str): The plaintext message to be encrypted.
+        key (str): A single character key for the Caesar cipher.
+
+    Returns:
+        str: The encrypted message.
+    """
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
     result = ""
 
-    # For each char in the message check if the char exists in the alphabet
-    # If it does then get the chars value (index) from the alphabet
-    # Move the index by the key length and then mod by 27 
-    # Add the new char to the result string 
     for char in message:
         if char in alphabet:
-            originalChar = alphabet.index(char)
-            newChar = (originalChar + alphabet.index(key) ) % 27
-            result += alphabet[newChar]
+            original_char = alphabet.index(char)
+            new_char = (original_char + alphabet.index(key)) % 27
+            result += alphabet[new_char]
         else:
             print("Invalid character!")
             break
-    print (result)
 
-def CaeserDecryption(message, key):
+    print(result)
+    return result
+
+
+def caesar_decryption(message, key):
+    """Decrypts a message encrypted with the Caesar cipher using the given key.
+
+    Args:
+        message (str): The encrypted message to be decrypted.
+        key (str): A single character key used in the encryption.
+
+    Returns:
+        str: The decrypted message.
+    """
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
     result = ""
 
-    # For each char in the message check if the char exists in the alphabet
-    # If it does then get the chars value (index) from the alphabet
-    # Move the index by the key length and then mod by 27 
-    # Add the new char to the result string 
     for char in message:
         if char in alphabet:
-            originalChar = alphabet.index(char)
-            newChar = (originalChar - alphabet.index(key) ) % 27
-            result += alphabet[newChar]
+            original_char = alphabet.index(char)
+            new_char = (original_char - alphabet.index(key)) % 27
+            result += alphabet[new_char]
         else:
             print("Invalid character!")
             break
-    print (result)
 
-
-
-
+    print(result)
+    return result
