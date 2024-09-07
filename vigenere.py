@@ -1,15 +1,40 @@
-def VigenereCipher(message, keyword, encrypt):
+def vigenere_cipher(message, keyword, encrypt):
+    alphabet = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ ")
     if encrypt:
-        VigenereCipherEncrypt(message, keyword)
+        encrypt_vigenere(message, keyword, alphabet)
     else:
-        VigenereCipherDecrypt(message, keyword)
+        decrypt_vigenere(message, keyword, alphabet)
 
 
-def VigenereCipherEncrypt(message, keyword):
-    # check if keyword is smaller than message
-    if len(keyword) < len(message):
-        # make keyword into key
-        for i in len(message):
-            keyword 
-        for char in message:
-            pass
+def create_key(message, keyword):
+    key = list(keyword)
+    if len(message) == len(key):
+        return key
+    else:
+        for i in range(len(message) - len(key)):
+            key.append(key[i % len(key)])
+    return "".join(key)
+
+def encrypt_vigenere(message, keyword, alphabet):
+    encrypted_message = []
+    key = create_key(message, keyword)
+
+    for i in range(len(message)):
+        char_alhpabet_index = alphabet.index(message[i])
+        key_alphabet_index = alphabet.index(key[i])
+        encrypted_char = (char_alhpabet_index + key_alphabet_index) % 27
+        encrypted_message.append(encrypted_char)
+        
+    return "".join(encrypted_message)
+
+def decrypt_vigenere(message, keyword, alphabet):
+    decrypted_message = []
+    key = create_key(message, keyword)
+
+    for i in range(len(message)):
+        char_alhpabet_index = alphabet.index(message[i])
+        key_alphabet_index = alphabet.index(key[i])
+        decrypted_char = (char_alhpabet_index - key_alphabet_index) % 27
+        decrypted_message.append(decrypted_char)
+        
+    return "".join(decrypted_message)
