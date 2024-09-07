@@ -2,6 +2,14 @@ alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
 
 def encrypt_one_time_pad(secret, key):
+    """ Encrypts a message using One Time Pad(OTP) cipher with the given key.
+    Args:
+        message (str): The plaintext message to be encrypted.
+        key (str): A string of equal length that is the key for the cipher.
+
+    Returns:
+        str: The encrypted message.
+    """
     secret = secret.upper()
     key = key.upper()
 
@@ -19,6 +27,15 @@ def encrypt_one_time_pad(secret, key):
 
 
 def decrypt_one_time_pad(encrypted_secret, key):
+    """Decrypts a message encrypted with the One Time Pad(OTP) cipher using the given key.
+
+    Args:
+        message (str): The encrypted message to be decrypted.
+        key (str): A string of equal length that was used as the key when the message was encrypted.
+
+    Returns:
+        str: The decrypted message.
+    """
     encrypted_secret = encrypted_secret.upper()
     key = key.upper()
 
