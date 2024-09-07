@@ -12,3 +12,4 @@ def VigenereCipherEncrypt(message, keyword):
         for i in len(message):
             keyword
         for char in message:
+            pass

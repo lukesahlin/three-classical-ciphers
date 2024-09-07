@@ -60,7 +60,6 @@ Main.py
     option_vigenere_cipher()
         Purpose
             To encrypt or decrypt a message using the Vigenère cipher based on user input.
-
         Assumptions
             The key for the Vigenère cipher is a word consisting of uppercase letters.
         Inputs
@@ -106,3 +105,5 @@ Main.py
         Cases and Expected Behavior
             Valid Choice: The user is taken to the appropriate cipher function.
             Invalid Choice: If the choice is not 1, 2, or 3, it prompts the user again via a recursive call.
+caeser.py
+    
