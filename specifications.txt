@@ -1,0 +1,108 @@
+
+one_time_pad.py
+    encrypt_one_time_pad(secret, key)
+        Purpose
+            The function encrypts a plaintext message using the One-Time Pad cipher, which provides perfect secrecy when the key is truly random and used only once.
+
+        Assumptions
+            The key is a string that is exactly the same length as the secret.
+            Both secret and key contain only characters from the defined ALPHABET.
+        Inputs
+            secret (str): The plaintext message to be encrypted, consisting of uppercase letters and spaces.
+            key (str): A string of equal length that serves as the key for the cipher.
+        Outputs
+            Returns (str): The encrypted message, also consisting of uppercase letters and spaces.
+        State Changes
+            The function converts both the secret and key to uppercase.
+            It raises a ValueError if the lengths of secret and key are not equal.
+        Cases and Expected Behavior
+            Valid Input: secret is incripted and you get the hidden message back.
+            Invalid Length: If the lengths do not match
+            Special Characters: If the secret contains characters not in the alphabet.
+    decrypt_one_time_pad(encrypted_secret, key)
+        Purpose
+            The function decrypts a message that has been encrypted using the One-Time Pad cipher, restoring it to its original plaintext form.
+
+        Assumptions
+            The key is a string that is exactly the same length as the encrypted_secret.
+            Both encrypted_secret and key consist of characters from the defined ALPHABET.
+        Inputs
+            encrypted_secret (str): The message that has been encrypted, consisting of uppercase letters and spaces.
+            key (str): A string of equal length that was used as the key when the message was encrypted.
+        Outputs
+            Returns (str): The decrypted message, consisting of uppercase letters and spaces.
+        State Changes
+            The function converts both the encrypted_secret and key to uppercase.
+            It raises a ValueError if the lengths of encrypted_secret and key are not equal.
+        Cases and Expected Behavior
+            Valid Input: secret is decryped and returns the secret
+            Invalid Length: If the lengths do not match
+            Special Characters: If the encrypted_secret contains characters that are not in the alphabet.
+Main.py
+    option_ceasar_cipher()
+        Purpose
+            To encrypt or decrypt a message using the Caesar cipher based on user input.
+
+        Assumptions
+            The key for the Caesar cipher is a single letter.
+            The input message can only contain uppercase letters.
+        Inputs
+            message (str): The message to be encrypted or decrypted.
+            action (str): The user's choice of operation, either 'e' (encrypt) or 'd' (decrypt).
+            key (str): A single letter used as the key for the Caesar cipher.
+        Outputs
+            Outputs the encrypted or decrypted message to the terminal.
+        State Changes
+            The function checks if the action input is valid and performs the corresponding operation.
+        Cases and Expected Behavior
+            Valid Input: The function successfully encrypts or decrypts the message.
+            Invalid Action: If the action is not 'e' or 'd', it prompts the user again via a recursive call.
+    option_vigenere_cipher()
+        Purpose
+            To encrypt or decrypt a message using the Vigenère cipher based on user input.
+
+        Assumptions
+            The key for the Vigenère cipher is a word consisting of uppercase letters.
+        Inputs
+            message (str): The message to be encrypted or decrypted.
+            action (str): The user's choice of operation, either 'e' (encrypt) or 'd' (decrypt).
+            key (str): A word used as the key for the Vigenère cipher.
+        Outputs
+            Outputs the encrypted or decrypted message to the terminal.
+        State Changes
+            Similar to the Caesar cipher, it checks if the action input is valid.
+        Cases and Expected Behavior
+            Valid Input: The function should eventually call the Vigenère encryption or decryption logic.
+            Invalid Action: If the action is not 'e' or 'd', it prompts the user again via a recursive call.
+    option_otp_cipher()
+        Purpose
+            To encrypt or decrypt a message using the One-Time Pad cipher based on user input.
+
+        Assumptions
+            The key must be of equal length to the message.
+        Inputs
+            message (str): The message to be encrypted or decrypted.
+            action (str): The user's choice of operation, either 'e' (encrypt) or 'd' (decrypt).
+            key (str): The key for the One-Time Pad cipher.
+        Outputs
+            Outputs the encrypted or decrypted message to the console.
+        State Changes
+            The function checks if the length of the key matches the length of the message.
+        Cases and Expected Behavior
+            Valid Input: The function successfully encrypts or decrypts the message.
+            Key Length Mismatch: If the key is not the same length as the message, it prompts the user again via a recursive call.
+            Invalid Action: If the action is not 'e' or 'd', it prompts the user again via a recursive call.
+    main()
+        Purpose
+            To provide a central menu for selecting which cipher to use.
+        Assumptions
+            The user can only select from the three cipher options provided.
+        Inputs
+            choice (str): The user's selection for which cipher to use.
+        Outputs
+            Calls the corresponding function based on the user's choice.
+        State Changes
+            It checks the user's input and calls the relevant cipher function.
+        Cases and Expected Behavior
+            Valid Choice: The user is taken to the appropriate cipher function.
+            Invalid Choice: If the choice is not 1, 2, or 3, it prompts the user again via a recursive call.
