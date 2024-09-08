@@ -3,6 +3,7 @@
 
 import pytest
 from one_time_pad import decrypt_one_time_pad, encrypt_one_time_pad
+from vigenere import *
 
 #Tests for One-Time Pad encryption and decryption.
 
@@ -80,3 +81,24 @@ def test_decrypt_otp_length_mismatch(encrypted_text, key):
         decrypt_one_time_pad(encrypted_text, key)
 
 # END OF OTP TESTS
+
+
+# TESTS FOR VIGENERE CIPHER
+def test_create_key():
+    original_message = "this is a secret message"
+    keyword = "hide this"
+    key = create_key(original_message, keyword)
+    assert key == "hide thishide thishide t"
+
+def test_vigenere_encryption():
+    original_message = "this is a secret message"
+    keyword = "hide this"
+    encrpyted_message = encrypt_vigenere(original_message, keyword)
+    assert encrpyted_message == "PLWZAZHSG HGQX HDL VEFX"
+
+def test_vigenere_decryption():
+    original_message = "JLCW TRSHHJVGLITKLXZ SXI"
+    keyword = "reveal this"
+    decrpyted_message = encrypt_vigenere(original_message, keyword)
+    assert decrpyted_message == "THIS IS A SECRET MESSAGE"
+# END OF TESTS FOR VIGENERE CIPHER

@@ -137,4 +137,55 @@ caeser.py
         Cases and Expected Behavior
             Valid Choice: User enters a message with only letters and spaces and the correct decryption key
             Invalid Choice: User enters special characters (!@#$%^&*) in their message, chooses a sentence to be the key, or picks the wrong key
-            
+vigenere.py
+    create_key(message, keyword)
+        Purpose
+            The method creates a key for the Vigenere Cipher to use by taking the keyword given and extending it to the size
+            of the message wanting to be encrypted/decrypted
+        Assumptions
+            The message provided contains only letters and spaces, no special characters
+            The keyword provided contains only letters and spaces, no special characters
+        Inputs
+            The message that is wanted to be encrypted/decrypted
+            The keyword that is to be used to encrypt/decrypt
+        Outputs
+            A key that is of the same length as the message
+        State Changes
+            No state changes
+        Cases and Expected Behavior
+            Valid Choice: User enters a message and keyword with only letters and spaces. Additionally, the keyword is smaller than the message
+            Invalid Choice: User enters special characters (!@#$%^&*) in their message, chooses a keyword bigger than the message
+    encrypt_vigenere(message, keyword)
+        Purpose
+            The method encrypts a given message using a provided keyword using Vigenere Cipher
+        Assumptions
+            The message provided contains only letters and spaces, no special characters
+            The keyword provided contains only letters and spaces, no special characters
+        Inputs
+            The message that is wanted to be encrypted
+            The keyword that is to be used to encrypt
+        Outputs
+            An encrypted message
+        State Changes
+            No state changes
+        Cases and Expected Behavior
+            Valid Choice: User enters a message and keyword with only letters and spaces. Additionally, the keyword is smaller than the message
+            Invalid Choice: User enters special characters (!@#$%^&*) in their message, chooses a keyword bigger than the message
+    decrypt_vigenere(message, keyword)
+        Purpose
+            The method decrypts a given message using a provided keyword using Vigenere Cipher
+        Assumptions
+            The message provided contains only letters and spaces, no special characters
+            The keyword provided contains only letters and spaces, no special characters
+        Inputs
+            The message that is wanted to be encrypted
+            The correct keyword that is to be used to decrypt
+        Outputs
+            A decrypted message
+        State Changes
+            No state changes
+        Cases and Expected Behavior
+            Valid Choice: User enters a message and keyword with only letters and spaces. Additionally, the keyword is smaller than the message
+            and is the correct keyword
+            Invalid Choice: User enters special characters (!@#$%^&*) in their message, chooses a keyword bigger than the message
+            and the keyword is incorrect

@@ -1,7 +1,7 @@
 
 from caesar import *
 from one_time_pad import decrypt_one_time_pad, encrypt_one_time_pad
-from vigenere import vigenere_cipher
+from vigenere import encrypt_vigenere, decrypt_vigenere
 
 def option_ceasar_cipher():
     # running ceasar cipher
@@ -31,12 +31,12 @@ def option_vigenere_cipher():
     key = input("Enter the key for encryption/decryption (a word): ").upper()
 
     if action == 'e':
-        hiddenMessage = vigenere_cipher(message, key, True)
+        hiddenMessage = encrypt_vigenere(message, key)
         print("Encrypting message in Vigenere Cipher")
         print("your secret message is " + hiddenMessage)
         return
     if action == 'd':
-        secret = vigenere_cipher(message, key, False)
+        secret = decrypt_vigenere(message, key)
         print("Decrypting message in Vigenere Cipher")
         print("your secret is " + secret)
         return
