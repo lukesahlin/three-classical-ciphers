@@ -3,7 +3,7 @@
 
 import pytest
 from one_time_pad import decrypt_one_time_pad, encrypt_one_time_pad
-from vigenere import *
+from caesar import caesar_encryption, caesar_decryption
 
 #Tests for One-Time Pad encryption and decryption.
 
@@ -82,23 +82,41 @@ def test_decrypt_otp_length_mismatch(encrypted_text, key):
 
 # END OF OTP TESTS
 
+# Tests for Caesar cipher 
 
-# TESTS FOR VIGENERE CIPHER
-def test_create_key():
-    original_message = "this is a secret message"
-    keyword = "hide this"
-    key = create_key(original_message, keyword)
-    assert key == "hide thishide thishide t"
+    @pytest.mark.parametrize(
+    "plain_text, key, expected_encrypted",
+    [
+        ("I love cryptography", "i", "QHTWCMHKZFXAWOZIXPF"),
+        ("hello", "w", "C GGJ"),
+    ]
+)
+    def test_encrypt_caesar(plain_text, key, expected_encrypted):
+        """Test encryption using the Caesar cipher.
 
-def test_vigenere_encryption():
-    original_message = "this is a secret message"
-    keyword = "hide this"
-    encrpyted_message = encrypt_vigenere(original_message, keyword)
-    assert encrpyted_message == "PLWZAZHSG HGQX HDL VEFX"
+        Args:
+            plain_text (str): The plaintext to be encrypted.
+            key (str): The key used for encryption.
+            expected_encrypted (str): The expected encrypted result.
+        """
+        encrypted = caesar_encryption(plain_text, key)
+        assert encrypted == expected_encrypted
 
-def test_vigenere_decryption():
-    original_message = "JLCW TRSHHJVGLITKLXZ SXI"
-    keyword = "reveal this"
-    decrpyted_message = encrypt_vigenere(original_message, keyword)
-    assert decrpyted_message == "THIS IS A SECRET MESSAGE"
-# END OF TESTS FOR VIGENERE CIPHER
+
+    @pytest.mark.parametrize(
+    "encrypted_text, key, expected_decrypted",
+    [
+        ("QHTWCMHKZFXAWOZIXPF", "i","I love cryptography"),
+        ("hello", "w", "C GGJ"),
+    ]
+)
+    def test_encrypt_caesar(plain_text, key, expected_encrypted):
+        """Test decryption using the Caesar cipher.
+
+        Args:
+            plain_text (str): The plaintext to be encrypted.
+            key (str): The key used for encryption.
+            expected_encrypted (str): The expected encrypted result.
+        """
+        encrypted = caesar_decryption(plain_text, key)
+        assert encrypted == expected_encrypted
