@@ -124,20 +124,20 @@ def test_decrypt_otp_length_mismatch(encrypted_text, key):
 
 # TESTS FOR VIGENERE CIPHER
 def test_create_key():
-    original_message = "this is a secret message"
-    keyword = "hide this"
+    original_message = "THIS IS A SECRET MESSAGE"
+    keyword = "HIDE THIS"
     key = create_key(original_message, keyword)
-    assert key == "hide thishide thishide t"
+    assert key == "HIDE THISHIDE THISHIDE T"
 
 def test_vigenere_encryption():
-    original_message = "this is a secret message"
-    keyword = "hide this"
+    original_message = "THIS IS A SECRET MESSAGE"
+    keyword = "HIDE THIS"
     encrpyted_message = encrypt_vigenere(original_message, keyword)
-    assert encrpyted_message == "PLWZAZHSG HGQX HDL VEFX"
+    assert encrpyted_message == " PLWZAZHSG HGQX HDL VEFX"
 
 def test_vigenere_decryption():
     original_message = "JLCW TRSHHJVGLITKLXZ SXI"
-    keyword = "reveal this"
-    decrpyted_message = encrypt_vigenere(original_message, keyword)
+    keyword = "REVEAL THIS"
+    decrpyted_message = decrypt_vigenere(original_message, keyword)
     assert decrpyted_message == "THIS IS A SECRET MESSAGE"
 # END OF TESTS FOR VIGENERE CIPHER
