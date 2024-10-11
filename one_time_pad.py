@@ -33,6 +33,7 @@ def encrypt_one_time_pad(secret, key):
         secret_index = ALPHABET.index(char)
         key_index = ALPHABET.index(key[i])
         cipher_val = (secret_index + key_index) % 27
+        print(char + " ------> " + ALPHABET[cipher_val])
         encrypted_secret += ALPHABET[cipher_val]
 
     return encrypted_secret
@@ -59,6 +60,7 @@ def decrypt_one_time_pad(encrypted_secret, key):
         encrypted_index = ALPHABET.index(char)
         key_index = ALPHABET.index(key[i])
         cipher_val = (encrypted_index - key_index) % 27
+        print(char + " ------> " + ALPHABET[cipher_val])
         secret += ALPHABET[cipher_val]
 
     return secret

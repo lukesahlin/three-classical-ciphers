@@ -20,10 +20,11 @@ def encrypt_vigenere(message, keyword, alphabet):
     key = create_key(message, keyword)
 
     for i in range(len(message)):
-        char_alhpabet_index = alphabet.index(message[i])
+        char_alphabet_index = alphabet.index(message[i])
         key_alphabet_index = alphabet.index(key[i])
-        encrypted_char = alphabet[(char_alhpabet_index + key_alphabet_index) % 27]
-        encrypted_message.append(encrypted_char)
+        encrypted_char_index = (char_alphabet_index + key_alphabet_index) % 27
+        print(message[i] + " ------> " + alphabet[encrypted_char_index])
+        encrypted_message.append(alphabet[encrypted_char_index])
         
     return "".join(encrypted_message)
 
@@ -32,9 +33,10 @@ def decrypt_vigenere(message, keyword, alphabet):
     key = create_key(message, keyword)
 
     for i in range(len(message)):
-        char_alhpabet_index = alphabet.index(message[i])
+        char_alphabet_index = alphabet.index(message[i])
         key_alphabet_index = alphabet.index(key[i])
-        decrypted_char = alphabet[(char_alhpabet_index - key_alphabet_index) % 27]
-        decrypted_message.append(decrypted_char)
+        decrypted_char_index = (char_alphabet_index - key_alphabet_index) % 27
+        print(message[i] + " ------> " + alphabet[decrypted_char_index])
+        decrypted_message.append(alphabet[decrypted_char_index])
         
     return "".join(decrypted_message)

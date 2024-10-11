@@ -68,7 +68,7 @@ Main.py
         Outputs
             Outputs the encrypted or decrypted message to the terminal.
         State Changes
-            Similar to the Caesar cipher, it checks if the action input is valid.
+            checks if the action input is valid.
         Cases and Expected Behavior
             Valid Input: The function should eventually call the Vigenère encryption or decryption logic.
             Invalid Action: If the action is not 'e' or 'd', it prompts the user again via a recursive call.

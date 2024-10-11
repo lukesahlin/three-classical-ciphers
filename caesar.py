@@ -15,6 +15,7 @@ def caesar_encryption(message, key):
         if char in alphabet:
             original_char = alphabet.index(char)
             new_char = (original_char + alphabet.index(key)) % 27
+            print(char + " ------> " + alphabet[new_char])
             result += alphabet[new_char]
         else:
             print("Invalid character!")
@@ -41,6 +42,7 @@ def caesar_decryption(message, key):
         if char in alphabet:
             original_char = alphabet.index(char)
             new_char = (original_char - alphabet.index(key)) % 27
+            print(char + " ------> " + alphabet[new_char])
             result += alphabet[new_char]
         else:
             print("Invalid character!")
