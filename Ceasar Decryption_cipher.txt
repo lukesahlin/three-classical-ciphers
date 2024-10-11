@@ -1,0 +1,6 @@
+Cipher type: Ceasar Decryption:
+Cipher text: DOING THE DO
+
+Cipher type: Ceasar Decryption:
+Cipher text: FO FO FOUR
+

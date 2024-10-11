@@ -1,0 +1,9 @@
+Cipher type: Ceasar Encryption:
+Cipher text: TWTGSSA
+
+Cipher type: Ceasar Encryption:
+Cipher text: JUOTMFZNKFJU
+
+Cipher type: Ceasar Encryption:
+Cipher text: IRCIRCIRXU
+
